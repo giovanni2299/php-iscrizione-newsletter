@@ -1,5 +1,5 @@
 <?php
-
+$email = $_POST['email']?? '';
 // var_dump($email);
 
 include __DIR__ . '/utilities.php'
@@ -28,23 +28,22 @@ include __DIR__ . '/utilities.php'
     <div class="container-fluid text-center">
 
         <h1>
-            <?php
-            if (checkEmail() === true) {
-            ?>
-                <div class="alert alert-success" role="alert">
-                    success !
-                </div>
-            <?php
-            } else {
-            ?>
+            <?php if($email === '') { ?>
+                <div class="alert alert-dark">Mail non inserita</div>
+
+            <?php } elseif(checkEmail($email) === true) { ?>
+                 <div class="alert alert-success" role="alert">
+                    Email inserita con succeso !
+                </div> 
+            <?php } else{ ?>
                 <div class="alert alert-warning" role="alert">
                     warning alert—check it out you missed a . or @ !
-                </div>
-            <?php
-            }
-            ?>
+                </div> 
+            <?php }?>
         </h1>
     </div>
+    
+    
 </body>
 
 </html>
