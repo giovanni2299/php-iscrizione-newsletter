@@ -1,5 +1,6 @@
 <?php
-
+$email = $_POST['email']?? null;
+var_dump($email)
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,8 @@
 </head>
 <body>
     <form action="" method="post">
-        <input type="emial" placeholder="inserisci la mail">
+        <input type="emial" name="email" id="email" placeholder="inserisci la mail">
+        <button>invia</button>
     </form>
 </body>
 </html>
