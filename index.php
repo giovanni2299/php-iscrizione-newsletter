@@ -2,13 +2,8 @@
 $email = $_POST['email']?? null;
 var_dump($email);
 
-function checkEmail($email){
-    if(str_contains($email,'@') && str_contains($email, '.')){
-        echo 'your email is correct ';
-    }else{
-        echo 'your email is not correct';
-    };
-}
+include __DIR__ . '/utilities.php'
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +18,6 @@ function checkEmail($email){
         <input type="emial" name="email" id="email" placeholder="inserisci la mail">
         <button>invia</button>
     </form>
-    <p><?php echo checkEmail($email)?></p>
+    <h1><?php echo checkEmail($email)?></h1>
 </body>
 </html>
