@@ -1,18 +1,18 @@
 <?php
 
-function checkEmail($email)
+function checkEmail()
 {
+    $email = $_POST['email']?? null;
+
     if($email === null){
         echo 'insierisci la tua email';
     }else{
         if (str_contains($email, '@') && str_contains($email, '.')) {
-            echo '<div class="alert alert-success" role="alert">
-            success !
-            </div>';
+            return true;
+            
         } else {
-            echo '<div class="alert alert-warning" role="alert">
-            warning alert—check it out you missed a . or @ !
-            </div>';
+            return false;
+            
         };
 
     }
